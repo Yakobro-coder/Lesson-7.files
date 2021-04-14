@@ -1,4 +1,12 @@
 import glob
+import chardet
+
+# На уроке вы сказали, вот вам доп.ДЗ, найдите способ как определить кодировку файла, и добавьте это в ваш код:)
+with open("1.txt", 'rb') as files:
+    read_file = files.read()
+    result = chardet.detect(read_file)
+    encoding = result['encoding']
+print(encoding)
 
 # Создаём лист с именнами всех файлов *.txt в директории, и удаляем файл с результатами если он есть.
 list_files= glob.glob('./*.txt')
